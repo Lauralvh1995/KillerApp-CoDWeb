@@ -11,19 +11,20 @@ namespace WoDWebBuilder.Controllers
         // GET: Character
         public ActionResult Index()
         {
-            return View();
+
+            return View("Index");
         }
 
         // GET: Character/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View("Details");
         }
 
         // GET: Character/Create
         public ActionResult Create()
         {
-            return View();
+            return View("Create");
         }
 
         // POST: Character/Create
@@ -45,7 +46,7 @@ namespace WoDWebBuilder.Controllers
         // GET: Character/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View("Edit");
         }
 
         // POST: Character/Edit/5
