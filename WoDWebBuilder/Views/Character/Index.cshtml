@@ -1,11 +1,18 @@
-﻿
+﻿@using WoDWebBuilder.Models
+@model IEnumerable<Character>
 @{
     ViewBag.Title = "Character";
 }
 <div class="container">
     <h2>Characters</h2>
-    <div class="col-md-3">
-
-    </div>
+    @foreach(Character charrie in Model)
+    {
+    <a href="~/Views/Character/Details.cshtml">
+        <div class="row">
+            <div class="col-md-3">@charrie.Name </div>
+            <div class="col-md-3">@charrie.Concept</div>
+        </div>
+    </a>
+    }
 </div>
 

@@ -14,13 +14,13 @@ namespace WoDWebBuilder.DAL
         public CharacterRepository(IDatabaseConnector connector)
         {
             Characters = new List<Character>();
-            _context = new CharacterContext();
+            _context = new CharacterContext(connector);
         }
-        IEnumerable<Character> GetCharacters()
+        public IEnumerable<Character> GetCharacters()
         {
             return Characters;
         }
-        Character GetCharacterByID(int characterID)
+        public Character GetCharacterByID(int characterID)
         {
             foreach (Character character in Characters)
             {

@@ -3,16 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WoDWebBuilder.DAL;
+using WoDWebBuilder.DAL.Connection;
+using WoDWebBuilder.Models;
 
 namespace WoDWebBuilder.Controllers
 {
     public class CharacterController : Controller
     {
+        List<Character> characters = new List<Character>();
+        private IDatabaseConnector _connector;
+        private CharacterRepository _repo;
+        public CharacterController()
+        {
+            _connector = new SQLServerConnector();
+            _repo = new CharacterRepository(_connector);
+        }
+
+
         // GET: Character
         public ActionResult Index()
         {
-
-            return View("Index");
+            List<Character> tempCharacters = _repo.GetCharacters().ToList();
+            foreach (Character character in tempCharacters)
+            {
+                if (character.UserID == /*current user id*/1)
+                {
+                    characters.Add(character);
+                }
+            }
+            return View(characters);
         }
 
         // GET: Character/Details/5

@@ -12,6 +12,7 @@ namespace WoDWebBuilder.Models
         public int ID { get; set; }
         [Required]
         public string Name { get; set; }
+        public int UserID { get; set; }
         public string Concept { get; set; }
         public int Age { get; set; }
         public string Background { get; set; }
