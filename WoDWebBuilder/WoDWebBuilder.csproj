@@ -226,7 +226,6 @@
     <Compile Include="DAL\Connection\SQLServerConnector.cs" />
     <Compile Include="DAL\Contexts\CharacterContext.cs" />
     <Compile Include="DAL\Repositories\CharacterRepository.cs" />
-    <Compile Include="DAL\Repositories\ICharacterRepository.cs" />
     <Compile Include="DAL\Contexts\IContext.cs" />
     <Compile Include="DAL\Connection\IDatabaseConnector.cs" />
     <Compile Include="DAL\Repositories\IRepository.cs" />

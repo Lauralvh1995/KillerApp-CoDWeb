@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WoDWebBuilder.DAL
 {
-    interface IDatabaseConnector : IDisposable
+    public interface IDatabaseConnector : IDisposable
     {
         IDbCommand CreateCommand();
         void ExecuteNonQuery(IDbCommand command);

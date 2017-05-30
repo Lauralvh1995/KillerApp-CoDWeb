@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WoDWebBuilder.DAL
 {
-    interface IRepository
+    interface IRepository<T>
     {
-        void Add();
+        void Add(T item);
         void Refresh();
-        void Update();
-        void Delete();
+        void Update(T item);
+        void Delete(T item);
     }
 }

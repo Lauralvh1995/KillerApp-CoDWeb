@@ -9,7 +9,7 @@ namespace WoDWebBuilder.DAL.Connection
 {
     public class SQLServerConnector : IDatabaseConnector
     {
-        SqlConnection _connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-WoDWebBuilder-20170502010807.mdf;Initial Catalog=aspnet-WoDWebBuilder-20170502010807;Integrated Security=True");
+        SqlConnection _connection = new SqlConnection("name=DefaultConnection");
 
         public IDbCommand CreateCommand()
         {
