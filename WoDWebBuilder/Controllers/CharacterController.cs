@@ -53,7 +53,13 @@ namespace WoDWebBuilder.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+               _repo.Add(new Character() { Name = collection["name"],
+                                            Gender = collection["gender"],
+                                            Age = Convert.ToInt32(collection["age"]),
+                                            Background = collection["background"],
+                                            Concept = collection["concept"],
+                                            Look = collection["look"]
+               });
 
                 return RedirectToAction("Index");
             }

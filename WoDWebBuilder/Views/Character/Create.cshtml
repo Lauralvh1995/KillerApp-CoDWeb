@@ -4,15 +4,15 @@
 }
 
 <h2>Create</h2>
-@using (Html.BeginForm("Character", "Create", FormMethod.Post))
+@using (Html.BeginForm("Create", "Character", FormMethod.Post))
 {
     <table>
-        <tr><td>@Html.Label("Name: ")</td><td>@Html.TextBoxFor(m => m.Name)</td></tr>
-        <tr><td>@Html.Label("Gender: ")</td><td>@Html.TextBoxFor(m => m.Gender)</td></tr>
-        <tr><td>@Html.Label("Age: ")</td><td>@Html.TextBoxFor(m => m.Age)</td></tr>
-        <tr><td>@Html.Label("Background: ")</td><td>@Html.TextAreaFor(m => m.Background)</td></tr>
-        <tr><td>@Html.Label("Concept: ")</td><td>@Html.TextBoxFor(m => m.Concept)</td></tr>
-        <tr><td>@Html.Label("Look: ")</td><td>@Html.TextAreaFor(m => m.Look)</td></tr>
+        <tr><td>@Html.Label("Name: ")</td><td><input type="text" id="name" /></td></tr>
+        <tr><td>@Html.Label("Gender: ")</td><td><input type="text" id="gender" /></td></tr>
+        <tr><td>@Html.Label("Age: ")</td><td><input type="number" id="age" /></td></tr>
+        <tr><td>@Html.Label("Background: ")</td><td><input type="text" id="background" /></td></tr>
+        <tr><td>@Html.Label("Concept: ")</td><td><input type="text" id="concept" /></td></tr>
+        <tr><td>@Html.Label("Look: ")</td><td><input type="text" id="look" /></td></tr>
     </table>
 
     <input type="submit" value="Create Character" />

@@ -1,0 +1,19 @@
+﻿@model WoDWebBuilder.Models.Die
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Dice</h2>
+
+    <ul>
+            @foreach (int i in Model.Rolls)  //dis breaks :(
+            {
+        <li>@i</li>
+            }
+    </ul>
+@using (Html.BeginForm("Roll", "Die", FormMethod.Post))
+{
+    @Html.TextBox("i")
+
+    <input type="submit" value="Roll" />
+}
