@@ -8,7 +8,7 @@ using WoDWebBuilder.Models;
 
 namespace WoDWebBuilder.DAL
 {
-    public class CharacterContext : IContext
+    public class CharacterContext : IContext<Character>
     {
         private readonly IDatabaseConnector _connector;
 
@@ -54,13 +54,17 @@ namespace WoDWebBuilder.DAL
                     characters.Add(character);
                 }
             }
-
             return characters;
         }
 
         public void Update()
         {
             throw new NotImplementedException();
+        }
+
+        public void AddKit()
+        {
+            //TODO: Query voor kit toevoegen
         }
     }
 }

@@ -8,10 +8,10 @@ using WoDWebBuilder.Models;
 
 namespace WoDWebBuilder.DAL
 {
-    interface IContext
+    interface IContext<T>
     {
         void Add();
-        List<Character> Read(int userid);
+        List<T> Read(int userid);
         void Update();
         void Delete();
     }
