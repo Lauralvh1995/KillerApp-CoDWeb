@@ -9,7 +9,7 @@ namespace WoDWebBuilder.DAL.Connection
 {
     public class SQLServerConnector : IDatabaseConnector
     {
-        SqlConnection _connection = new SqlConnection("name=DefaultConnection");
+        SqlConnection _connection = new SqlConnection("user id=User;server=DESKTOP-E33041D\\SQLEXPRESS;Trusted_Connection=yes;database=WoDDatabase;connection timeout=15");
 
         public IDbCommand CreateCommand()
         {

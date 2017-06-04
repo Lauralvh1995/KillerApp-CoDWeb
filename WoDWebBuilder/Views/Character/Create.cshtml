@@ -4,7 +4,16 @@
 }
 
 <h2>Create</h2>
-<form>
-    <input type="text" />
-    <input type="submit" />
-</form>
+@using (Html.BeginForm("Character", "Create", FormMethod.Post))
+{
+    <table>
+        <tr><td>@Html.Label("Name: ")</td><td>@Html.TextBoxFor(m => m.Name)</td></tr>
+        <tr><td>@Html.Label("Gender: ")</td><td>@Html.TextBoxFor(m => m.Gender)</td></tr>
+        <tr><td>@Html.Label("Age: ")</td><td>@Html.TextBoxFor(m => m.Age)</td></tr>
+        <tr><td>@Html.Label("Background: ")</td><td>@Html.TextAreaFor(m => m.Background)</td></tr>
+        <tr><td>@Html.Label("Concept: ")</td><td>@Html.TextBoxFor(m => m.Concept)</td></tr>
+        <tr><td>@Html.Label("Look: ")</td><td>@Html.TextAreaFor(m => m.Look)</td></tr>
+    </table>
+
+    <input type="submit" value="Create Character" />
+}

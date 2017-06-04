@@ -10,9 +10,9 @@ namespace WoDWebBuilder.DAL
 {
     interface IContext<T>
     {
-        void Add();
+        void Add(int userid, T t);
         List<T> Read(int userid);
-        void Update();
-        void Delete();
+        void Update(T t);
+        void Delete(T t);
     }
 }

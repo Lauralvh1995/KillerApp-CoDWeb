@@ -17,14 +17,29 @@ namespace WoDWebBuilder.DAL
             _connector = connector;
         }
 
-        public void Add()
+        public void Add(int userid, Character character)
         {
-            throw new NotImplementedException();
+            IDbCommand command = _connector.CreateCommand();
+            command.CommandText = "INSERT INTO Character (AccountID, name, concept, look, background, gender, age)"+
+                                    "VALUES (@userid, @name, @concept, @look, @background, @gender, @age";
+            command.AddParameterWithValue("userid", userid);
+            command.AddParameterWithValue("name", character.Name);
+            command.AddParameterWithValue("concept", character.Concept);
+            command.AddParameterWithValue("look", character.Look);
+            command.AddParameterWithValue("background", character.Background);
+            command.AddParameterWithValue("gender", character.Gender);
+            command.AddParameterWithValue("age", character.Age);
+
+            _connector.ExecuteNonQuery(command);
         }
 
-        public void Delete()
+        public void Delete(Character character)
         {
-            throw new NotImplementedException();
+            IDbCommand command = _connector.CreateCommand();
+            command.CommandText = "DELETE FROM [Character] WHERE ID=@ID;";
+            command.AddParameterWithValue("ID", character.ID);
+
+            _connector.ExecuteNonQuery(command);
         }
 
         public List<Character> Read(int userid)
@@ -57,12 +72,21 @@ namespace WoDWebBuilder.DAL
             return characters;
         }
 
-        public void Update()
+        public void Update(Character character)
         {
-            throw new NotImplementedException();
+            IDbCommand command = _connector.CreateCommand();
+            command.CommandText = "UPDATE Character SET Name=@name, Concept=@concept, Look=@look, Background=@background, Gender=@gender, Age=@age";
+            command.AddParameterWithValue("name", character.Name);
+            command.AddParameterWithValue("concept", character.Concept);
+            command.AddParameterWithValue("look", character.Look);
+            command.AddParameterWithValue("background", character.Background);
+            command.AddParameterWithValue("gender", character.Gender);
+            command.AddParameterWithValue("age", character.Age);
+
+            _connector.ExecuteNonQuery(command);
         }
 
-        public void AddKit()
+        public void AddKit(Character character, string kitName)
         {
             //TODO: Query voor kit toevoegen
         }

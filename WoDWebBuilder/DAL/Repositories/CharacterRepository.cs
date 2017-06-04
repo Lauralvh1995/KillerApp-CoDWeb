@@ -33,7 +33,7 @@ namespace WoDWebBuilder.DAL
         }
         public void Add(Character character)
         {
-
+            Characters.Add(character);
         }
         public void Refresh()
         {
