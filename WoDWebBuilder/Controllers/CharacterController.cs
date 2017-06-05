@@ -38,7 +38,7 @@ namespace WoDWebBuilder.Controllers
         // GET: Character/Details/5
         public ActionResult Details(int id)
         {
-            return View("Details");
+            return View(_repo.GetCharacterByID(id));
         }
 
         // GET: Character/Create

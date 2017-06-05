@@ -5,14 +5,13 @@
 }
 <div class="container">
     <h2>Characters</h2>
-    @foreach(Character charrie in Model)
-    {
-    <a href="~/Views/Character/Details.cshtml">
-        <div class="row">
-            <div class="col-md-3">@charrie.Name </div>
-            <div class="col-md-3">@charrie.Concept</div>
-        </div>
-    </a>
-    }
+        @foreach (Character charrie in Model)
+        {
+            <a href="~/Views/Character/Details.cshtml">
+                <div class="col-md-3">@charrie.Name </div>
+                <div class="col-md-3">@charrie.Concept</div>
+            </a>
+            <a href="~/Views/Character/Edit.cshtml">(edit)</a>
+        }
 </div>
 
