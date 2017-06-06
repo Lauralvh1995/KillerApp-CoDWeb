@@ -11,8 +11,8 @@ namespace WoDWebBuilder.Models
         [Key]
         public int ID { get; set; }
         [Required]
-        public string Name { get; set; }
         public int UserID { get; set; }
+        public string Name { get; set; }
         public string Concept { get; set; }
         public int Age { get; set; }
         public string Background { get; set; }
@@ -25,7 +25,7 @@ namespace WoDWebBuilder.Models
         public string Aspiration1 { get; set; }
         public string Aspiration2 { get; set; }
         public string Aspiration3 { get; set; }
-        public string condition { get; set; }
+        public string Condition { get; set; }
         public int Health { get; set; }
         public int Willpower { get; set; }
         public int Integrity { get; set; }

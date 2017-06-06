@@ -72,7 +72,7 @@ namespace WoDWebBuilder.Controllers
         // GET: Character/Edit/5
         public ActionResult Edit(int id)
         {
-            return View("Edit");
+            return View(_repo.GetCharacterByID(id));
         }
 
         // POST: Character/Edit/5
@@ -91,26 +91,5 @@ namespace WoDWebBuilder.Controllers
             }
         }
 
-        // GET: Character/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Character/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

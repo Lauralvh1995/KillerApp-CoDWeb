@@ -63,7 +63,24 @@ namespace WoDWebBuilder.DAL
                         Age  = reader.GetInt32(8),
                         Background = reader.GetString(6),
                         Look = reader.GetString(5),
-                        Gender = reader.GetString(7)
+                        Gender = reader.GetString(7),
+                        Faction = reader.GetString(8),
+                        Virtue = reader.GetString(8),
+                        Vice = reader.GetString(8),
+                        Aspiration1 = reader.GetString(8),
+                        Aspiration2 = reader.GetString(9),
+                        Aspiration3 = reader.GetString(10),
+                        Condition = reader.GetString(11),
+                        Health = reader.GetInt32(12),
+                        Willpower = reader.GetInt32(13),
+                        Integrity = reader.GetInt32(14),
+                        Size = reader.GetInt32(15),
+                        Speed = reader.GetInt32(16),
+                        Defense = reader.GetInt32(17),
+                        Armor = reader.GetInt32(18),
+                        InitiativeMod = reader.GetInt32(19),
+                        Beats = reader.GetInt32(20),
+                        Experience = reader.GetInt32(21),
                     };
 
                     characters.Add(character);

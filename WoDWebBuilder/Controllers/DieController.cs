@@ -20,10 +20,6 @@ namespace WoDWebBuilder.Controllers
         [HttpPost]
         public ActionResult Roll(int i)
         {
-            foreach (int roll in die.Rolls.ToList())
-            {
-                die.Rolls.Remove(roll);
-            }
             die.Roll(i);
             RedirectToAction("Index");
             return View("Index");

@@ -24,6 +24,10 @@ namespace WoDWebBuilder.Models
 
         public List<int> Roll(int amount)
         {
+            foreach (int roll in Rolls.ToList())
+            {
+                Rolls.Remove(roll);
+            }
             for(int i=0;i<amount;i++)
             {
                 Rolls.Add(rando.Next(Sides)+1);
