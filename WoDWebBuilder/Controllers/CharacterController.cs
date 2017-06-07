@@ -36,9 +36,9 @@ namespace WoDWebBuilder.Controllers
         }
 
         // GET: Character/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
-            return View(_repo.GetCharacterByID(id));
+            return View(_repo.GetCharacterByID(1));
         }
 
         // GET: Character/Create
@@ -81,7 +81,7 @@ namespace WoDWebBuilder.Controllers
         {
             try
             {
-                // TODO: Add update logic here
+                
 
                 return RedirectToAction("Index");
             }
