@@ -10,6 +10,8 @@ namespace WoDWebBuilder.Models
     {
         [Key]
         public int ID { get; set; }
+
+        public List<Stat> Stats { get; set; }
         [Required]
         public int UserID { get; set; }
         public string Name { get; set; }
