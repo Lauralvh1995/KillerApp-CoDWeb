@@ -49,13 +49,13 @@ namespace WoDWebBuilder.Controllers
 
         // POST: Character/Create
         [HttpPost]
-        public ActionResult Create(Character charrie)
+        public ActionResult Create(Character model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _repo.Add(charrie);
+                    _repo.Add(model);
 
                     return RedirectToAction("Index");
                 }
