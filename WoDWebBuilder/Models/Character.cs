@@ -12,8 +12,8 @@ namespace WoDWebBuilder.Models
         public int ID { get; set; }
 
         public List<Stat> Stats { get; set; }
-        [Required]
         public int UserID { get; set; }
+        
         public string Name { get; set; }
         public string Concept { get; set; }
         public int Age { get; set; }
@@ -38,5 +38,63 @@ namespace WoDWebBuilder.Models
         public int InitiativeMod { get; set; }
         public int Beats { get; set; }
         public int Experience { get; set; }
+
+        public Character()
+        {
+            Stats = new List<Stat>();
+            UserID = 1;
+        }
+
+        public bool CheckRequirement(Stat stat)
+        {
+            List<Requirement> tempList = new List<Requirement>();
+            int checksum = stat.GetRequirements().ToList().Count();
+            foreach (Requirement requirement in stat.GetRequirements().ToList())
+            {
+                if (requirement.Additive == true && stat.Value == requirement.Value)
+                {
+                    checksum--;
+                }
+                else
+                {
+                    if (requirement.Additive == false)
+                    {
+                        tempList.Add(requirement);
+                    }
+                }
+                checksum = checksum - OptionalCheck(tempList, stat);
+                if (checksum == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+        public void ChangeStat(Stat stat, int value)
+        {
+            foreach(Stat st in Stats)
+            {
+                if(st.Name == stat.Name && CheckRequirement(stat))
+                {
+                    st.Value = value;
+                }
+            }
+        }
+
+        public int OptionalCheck(List<Requirement> tempList, Stat stat)
+        {
+            int tempCheck = tempList.Count();
+            foreach (Requirement req in tempList)
+            {
+                if (stat.Value == req.Value)
+                {
+                    tempCheck--;
+                    return tempCheck;
+                }
+            }
+            return 0;
+        }
     }
 }

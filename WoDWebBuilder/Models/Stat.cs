@@ -21,5 +21,10 @@ namespace WoDWebBuilder.Models
         public bool SpecializationEnabled { get; set; }
         public List<Requirement> Requirement { get; set; }
         public int Value { get; set; }
+
+        public List<Requirement> GetRequirements()
+        {
+            return Requirement;
+        }
     }
 }

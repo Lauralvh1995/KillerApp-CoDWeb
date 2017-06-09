@@ -15,6 +15,7 @@ namespace WoDWebBuilder.DAL
         {
             Characters = new List<Character>();
             _context = new CharacterContext(connector);
+            Characters = _context.Read(1);
         }
         public IEnumerable<Character> GetCharacters()
         {
@@ -33,7 +34,7 @@ namespace WoDWebBuilder.DAL
         }
         public void Add(Character character)
         {
-            Characters.Add(character);
+            _context.Add(character.UserID, character);
         }
         public void Refresh()
         {

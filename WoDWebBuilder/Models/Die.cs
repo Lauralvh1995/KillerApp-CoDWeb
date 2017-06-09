@@ -13,7 +13,8 @@ namespace WoDWebBuilder.Models
 
         public Die()
         {
-
+            Rolls = new List<int>();
+            Sides = 10;
         }
 
         public Die(int sides)

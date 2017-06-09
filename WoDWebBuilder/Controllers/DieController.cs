@@ -21,8 +21,7 @@ namespace WoDWebBuilder.Controllers
         public ActionResult Roll(int i)
         {
             die.Roll(i);
-            RedirectToAction("Index");
-            return View("Index");
+            return View("Index", die);
         }
     }
 }

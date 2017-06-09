@@ -27,7 +27,7 @@ namespace WoDWebBuilder.Controllers
             List<Character> tempCharacters = _repo.GetCharacters().ToList();
             foreach (Character character in tempCharacters)
             {
-                if (character.UserID == /*current user id*/1)
+                if (character.UserID == 1)
                 {
                     characters.Add(character);
                 }
@@ -49,19 +49,17 @@ namespace WoDWebBuilder.Controllers
 
         // POST: Character/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Character charrie)
         {
             try
             {
-               _repo.Add(new Character() { Name = collection["name"],
-                                            Gender = collection["gender"],
-                                            Age = Convert.ToInt32(collection["age"]),
-                                            Background = collection["background"],
-                                            Concept = collection["concept"],
-                                            Look = collection["look"]
-               });
+                if (ModelState.IsValid)
+                {
+                    _repo.Add(charrie);
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+                return View();
             }
             catch
             {
@@ -81,21 +79,8 @@ namespace WoDWebBuilder.Controllers
         {
             try
             {
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
-                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = Convert.ToInt32(collection["Age"]);
+                _repo.GetCharacterByID(id).Background = collection["Background"];
                 _repo.Update(_repo.GetCharacterByID(id));
                 return RedirectToAction("Index");
             }

@@ -7,7 +7,7 @@ namespace WoDWebBuilder.Models
 {
     public class Requirement
     {
-        public Stat Stat { get; set; }
+        public int StatID { get; set; }
         public int Value { get; set; }
         public bool Additive { get; set; }
     }

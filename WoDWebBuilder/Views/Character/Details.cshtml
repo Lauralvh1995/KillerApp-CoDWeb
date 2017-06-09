@@ -43,7 +43,7 @@
             <td>
                 @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
                 {
-                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 1)
+                    if (stat.ID == 1)
                     {
                         if (stat.Value == 1)
                         {
@@ -92,7 +92,7 @@
             <td>
                 @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
                 {
-                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 2)
+                    if (stat.ID == 2)
                     {
                         if (stat.Value == 1)
                         {
@@ -141,7 +141,7 @@
             <td>
                 @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
                 {
-                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 3)
+                    if (stat.ID == 3)
                     {
                         if (stat.Value == 1)
                         {
@@ -192,7 +192,7 @@
             <td>
                 @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
                 {
-                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 4)
+                    if (stat.ID == 4)
                     {
                         if (stat.Value == 1)
                         {
@@ -241,7 +241,7 @@
             <td>
                 @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
                 {
-                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 5)
+                    if (stat.ID == 5)
                     {
                         if (stat.Value == 1)
                         {
@@ -290,7 +290,7 @@
             <td>
                 @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
                 {
-                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 6)
+                    if (stat.ID == 6)
                     {
                         if (stat.Value == 1)
                         {
@@ -341,7 +341,7 @@
             <td>
                 @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
                 {
-                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 7)
+                    if (stat.ID == 7)
                     {
                         if (stat.Value == 1)
                         {
@@ -390,7 +390,7 @@
             <td>
                 @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
                 {
-                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 8)
+                    if (stat.ID == 8)
                     {
                         if (stat.Value == 1)
                         {
@@ -439,7 +439,7 @@
             <td>
                 @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
                 {
-                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 9)
+                    if (stat.ID == 9)
                     {
                                     if (stat.Value == 1)
                                     {
@@ -487,42 +487,51 @@
         </tr>
     </table>
 </div>
-
-<h3>Skills</h3>
+<div class="row">
+    <h3>Skills</h3>
+</div>
 <div class="col-md-4">
-    <h4>Mental</h4>
-    @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+<h4>Mental</h4>
+<table>
+@foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+{
+    if (stat.ID > 9 && stat.ID < 18)
     {
-        if (stat.StatType == WoDWebBuilder.Models.StatType.Skill && stat.ID < 18 && stat.ID > 9)
-        {
-            <table>
-                <tr>
-                    <td>@Html.Label(stat.Name)</td>
-                    <td>
-                        @if (stat.Value == 1)
-                        {
+        <tr>
+            <td>@Html.Label(stat.Name)</td>
+            <td>
+                @if (stat.Value == 0)
+                {
+                    @Html.CheckBox("stat1", false)
+                    @Html.CheckBox("stat2", false)
+                    @Html.CheckBox("stat3", false)
+                    @Html.CheckBox("stat4", false)
+                    @Html.CheckBox("stat5", false)
+                }
+                    @if (stat.Value == 1)
+                    {
                             @Html.CheckBox("stat1", true)
                             @Html.CheckBox("stat2")
                             @Html.CheckBox("stat3")
                             @Html.CheckBox("stat4")
                             @Html.CheckBox("stat5")
-                        }
-                        @if (stat.Value == 2)
-                        {
+                    }
+                    @if (stat.Value == 2)
+                    {
                             @Html.CheckBox("stat1", true)
                             @Html.CheckBox("stat2", true)
                             @Html.CheckBox("stat3")
                             @Html.CheckBox("stat4")
                             @Html.CheckBox("stat5")
-                        }
-                        @if (stat.Value == 3)
-                        {
+                    }
+                    @if (stat.Value == 3)
+                    {
                             @Html.CheckBox("stat1", true)
                             @Html.CheckBox("stat2", true)
                             @Html.CheckBox("stat3", true)
                             @Html.CheckBox("stat4")
                             @Html.CheckBox("stat5")
-                        }
+                    }
                         @if (stat.Value == 4)
                         {
                             @Html.CheckBox("stat1", true)
@@ -539,22 +548,30 @@
                             @Html.CheckBox("stat4", true)
                             @Html.CheckBox("stat5", true)
                         }
-                    </td>
-                </tr>
-            </table>
-        }
+            </td>
+        </tr>
     }
+}
+</table>
     <h4>Physical</h4>
-    @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
-    {
-        if (stat.StatType == WoDWebBuilder.Models.StatType.Skill && stat.ID < 26 && stat.ID > 17)
+    <table>
+        @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
         {
-            <table>
+            if (stat.ID > 17 && stat.ID < 26)
+            {
                 <tr>
                     <td>@Html.Label(stat.Name)</td>
                     <td>
-                        @if (stat.Value == 1)
+                        @if (stat.Value == 0)
                         {
+                            @Html.CheckBox("stat1", false)
+                            @Html.CheckBox("stat2", false)
+                            @Html.CheckBox("stat3", false)
+                            @Html.CheckBox("stat4", false)
+                            @Html.CheckBox("stat5", false)
+                        }
+                        @if (stat.Value == 1)
+                    {
                             @Html.CheckBox("stat1", true)
                             @Html.CheckBox("stat2")
                             @Html.CheckBox("stat3")
@@ -562,7 +579,7 @@
                             @Html.CheckBox("stat5")
                         }
                         @if (stat.Value == 2)
-                        {
+                    {
                             @Html.CheckBox("stat1", true)
                             @Html.CheckBox("stat2", true)
                             @Html.CheckBox("stat3")
@@ -570,7 +587,7 @@
                             @Html.CheckBox("stat5")
                         }
                         @if (stat.Value == 3)
-                        {
+                    {
                             @Html.CheckBox("stat1", true)
                             @Html.CheckBox("stat2", true)
                             @Html.CheckBox("stat3", true)
@@ -595,20 +612,28 @@
                         }
                     </td>
                 </tr>
-            </table>
+            }
         }
-    }
+    </table>
     <h4>Social</h4>
-    @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
-    {
-        if (stat.StatType == WoDWebBuilder.Models.StatType.Skill && stat.ID < 34 && stat.ID > 25)
+    <table>
+        @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
         {
-            <table>
+            if (stat.ID > 25 && stat.ID < 34)
+            {
                 <tr>
                     <td>@Html.Label(stat.Name)</td>
                     <td>
-                        @if (stat.Value == 1)
+                        @if (stat.Value == 0)
                         {
+                            @Html.CheckBox("stat1", false)
+                            @Html.CheckBox("stat2", false)
+                            @Html.CheckBox("stat3", false)
+                            @Html.CheckBox("stat4", false)
+                            @Html.CheckBox("stat5", false)
+                        }
+                        @if (stat.Value == 1)
+                    {
                             @Html.CheckBox("stat1", true)
                             @Html.CheckBox("stat2")
                             @Html.CheckBox("stat3")
@@ -616,7 +641,7 @@
                             @Html.CheckBox("stat5")
                         }
                         @if (stat.Value == 2)
-                        {
+                    {
                             @Html.CheckBox("stat1", true)
                             @Html.CheckBox("stat2", true)
                             @Html.CheckBox("stat3")
@@ -624,7 +649,7 @@
                             @Html.CheckBox("stat5")
                         }
                         @if (stat.Value == 3)
-                        {
+                    {
                             @Html.CheckBox("stat1", true)
                             @Html.CheckBox("stat2", true)
                             @Html.CheckBox("stat3", true)
@@ -649,20 +674,28 @@
                         }
                     </td>
                 </tr>
-            </table>
+            }
         }
-    }
+    </table>
 </div>
 <div class="col-md-3">
     <h3>Merits</h3>
     @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
     {
-        if (stat.StatType == WoDWebBuilder.Models.StatType.Merit)
+        if (stat.ID > 33)
         {
     <table>
         <tr>
             <td>@Html.Label(stat.Name)</td>
             <td>
+                @if (stat.Value == 0)
+                {
+                    @Html.CheckBox("stat1", false)
+                    @Html.CheckBox("stat2", false)
+                    @Html.CheckBox("stat3", false)
+                    @Html.CheckBox("stat4", false)
+                    @Html.CheckBox("stat5", false)
+                }
                 @if (stat.Value == 1)
                 {
                     @Html.CheckBox("Merit1", true)
