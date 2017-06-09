@@ -21,8 +21,8 @@ namespace WoDWebBuilder.DAL
         public void Add(int userid, Character character)
         {
             IDbCommand command = _connector.CreateCommand();
-            command.CommandText = "INSERT INTO Character (Account_ID, name, concept, look, background, gender, age)" +
-                                    "VALUES (@accountid, @name, @concept, @look, @background, @gender, @age";
+            command.CommandText = "INSERT INTO Character (account_ID, name, concept, look, background, gender, age)"+
+                                    "VALUES (@accountid, @name, @concept, @look, @background, @gender, @age)";
             command.AddParameterWithValue("accountid", userid);
             command.AddParameterWithValue("name", character.Name);
             command.AddParameterWithValue("concept", character.Concept);

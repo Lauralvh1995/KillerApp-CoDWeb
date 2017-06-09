@@ -7,12 +7,12 @@
 @using (Html.BeginForm())
 { 
     <table>
-        <tr><td>@Html.Label("Name: ")</td><td><input type="text" id="Name" /></td></tr>
-        <tr><td>@Html.Label("Gender: ")</td><td><input type="text" id="Gender" /></td></tr>
-        <tr><td>@Html.Label("Age: ")</td><td><input type="number" id="Age" /></td></tr>
-        <tr><td>@Html.Label("Background: ")</td><td><input type="text" id="Background" /></td></tr>
-        <tr><td>@Html.Label("Concept: ")</td><td><input type="text" id="Concept" /></td></tr>
-        <tr><td>@Html.Label("Look: ")</td><td><input type="text" id="Look" /></td></tr>
+        <tr><td>@Html.Label("Name")</td><td><input type="text" name="Name" /></td></tr>
+        <tr><td>@Html.Label("Gender")</td><td><input type="text" name="Gender" /></td></tr>
+        <tr><td>@Html.Label("Age")</td><td><input type="number" name="Age" /></td></tr>
+        <tr><td>@Html.Label("Background")</td><td><input type="text" name="Background" /></td></tr>
+        <tr><td>@Html.Label("Concept")</td><td><input type="text" name="Concept" /></td></tr>
+        <tr><td>@Html.Label("Look")</td><td><input type="text" name="Look" /></td></tr>
     </table>
     <input type="submit" value="Create Character" />
 }

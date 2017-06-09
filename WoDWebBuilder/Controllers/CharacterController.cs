@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -24,14 +25,7 @@ namespace WoDWebBuilder.Controllers
         // GET: Character
         public ActionResult Index()
         {
-            List<Character> tempCharacters = _repo.GetCharacters().ToList();
-            foreach (Character character in tempCharacters)
-            {
-                if (character.UserID == 1)
-                {
-                    characters.Add(character);
-                }
-            }
+            CheckCharacters();
             return View(characters);
         }
 
@@ -55,15 +49,17 @@ namespace WoDWebBuilder.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    model.UserID = 1;
                     _repo.Add(model);
-
-                    return RedirectToAction("Index");
                 }
-                return View();
+                CheckCharacters();
+                return View("Index", characters);
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                Debug.Print(ex.ToString());
+                CheckCharacters();
+                return View("Index", characters);
             }
         }
 
@@ -90,5 +86,16 @@ namespace WoDWebBuilder.Controllers
             }
         }
 
+        public void CheckCharacters()
+        {
+            List<Character> tempCharacters = _repo.GetCharacters().ToList();
+            foreach (Character character in tempCharacters)
+            {
+                if (character.UserID == 1)
+                {
+                    characters.Add(character);
+                }
+            }
+        }
     }
 }

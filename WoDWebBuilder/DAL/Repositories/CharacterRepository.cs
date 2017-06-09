@@ -35,6 +35,7 @@ namespace WoDWebBuilder.DAL
         public void Add(Character character)
         {
             _context.Add(character.UserID, character);
+            Characters.Add(character);
         }
         public void Refresh()
         {
