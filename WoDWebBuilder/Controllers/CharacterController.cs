@@ -81,8 +81,22 @@ namespace WoDWebBuilder.Controllers
         {
             try
             {
-                
-
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.GetCharacterByID(id).Age = collection["Age"];
+                _repo.Update(_repo.GetCharacterByID(id));
                 return RedirectToAction("Index");
             }
             catch

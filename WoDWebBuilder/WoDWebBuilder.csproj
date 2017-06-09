@@ -298,10 +298,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
@@ -321,8 +318,8 @@
     <Content Include="Views\Character\Index.cshtml" />
     <Content Include="Views\Character\Details.cshtml" />
     <Content Include="Views\Character\Create.cshtml" />
-    <Content Include="Views\Character\Edit.cshtml" />
     <Content Include="Views\Die\Index.cshtml" />
+    <Content Include="Views\Character\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

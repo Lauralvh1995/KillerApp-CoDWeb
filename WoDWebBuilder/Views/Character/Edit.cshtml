@@ -1,7 +1,711 @@
-﻿
+﻿@model WoDWebBuilder.Models.Character
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Details";
 }
+<h2>Details</h2>
+<div class="row">
+    <h3>General Info</h3>
+    <table>
+        <tr>
+            <td>@Html.Label("Name: ")</td>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+            <td>@Html.Label("Gender: ")</td>
+            <td>@Html.TextBoxFor(m => m.Gender)</td>
+            <td>@Html.Label("Age: ")</td>
+            <td>@Html.TextBoxFor(m => m.Age)</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Background: ")</td>
+            <td>@Html.TextAreaFor(m => m.Background)</td>
+            <td>@Html.Label("Concept: ")</td>
+            <td>@Html.TextBoxFor(m => m.Concept)</td>
+            <td>@Html.Label("Look: ")</td>
+            <td>@Html.TextAreaFor(m => m.Look)</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Virtue")</td>
+            <td>@Html.TextBoxFor(m => m.Virtue)</td>
+            <td>@Html.Label("Vice")</td>
+            <td>@Html.TextBoxFor(m => m.Vice)</td>
+            <td>@Html.Label("Faction")</td>
+            <td>@Html.TextBoxFor(m => m.Faction)</td>
+        </tr>
+        <tr>
 
-<h2>Edit</h2>
+        </tr>
+    </table>
+</div>
+<div class="row">
+    <h3>Attributes</h3>
+    <table>
+        <tr>
+            <td>@Html.Label("Intelligence: ")</td>
+            <td>
+                @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+                {
+                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 1)
+                    {
+                        if (stat.Value == 1)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2")
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 2)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 3)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 4)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 5)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5", true)
+                        }
+                    }
+                }
+            </td>
+            <td>@Html.Label("Strength: ")</td>
+            <td>
+                @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+                {
+                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 2)
+                    {
+                        if (stat.Value == 1)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2")
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 2)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 3)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 4)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 5)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5", true)
+                        }
+                    }
+                }
+            </td>
+            <td>@Html.Label("Presence: ")</td>
+            <td>
+                @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+                {
+                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 3)
+                    {
+                        if (stat.Value == 1)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2")
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 2)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 3)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 4)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 5)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5", true)
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Wits: ")</td>
+            <td>
+                @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+                {
+                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 4)
+                    {
+                        if (stat.Value == 1)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2")
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 2)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 3)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 4)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 5)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5", true)
+                        }
+                    }
+                }
+            </td>
+            <td>@Html.Label("Dexterity: ")</td>
+            <td>
+                @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+                {
+                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 5)
+                    {
+                        if (stat.Value == 1)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2")
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 2)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 3)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 4)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 5)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5", true)
+                        }
+                    }
+                }
+            </td>
+            <td>@Html.Label("Manipulation: ")</td>
+            <td>
+                @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+                {
+                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 6)
+                    {
+                        if (stat.Value == 1)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2")
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 2)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 3)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 4)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 5)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5", true)
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Resolve: ")</td>
+            <td>
+                @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+                {
+                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 7)
+                    {
+                        if (stat.Value == 1)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2")
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 2)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 3)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 4)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 5)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5", true)
+                        }
+                    }
+                }
+            </td>
+            <td>@Html.Label("Stamina: ")</td>
+            <td>
+                @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+                {
+                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 8)
+                    {
+                        if (stat.Value == 1)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2")
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 2)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 3)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 4)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5")
+                        }
+                        if (stat.Value == 5)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5", true)
+                        }
+                    }
+                }
+            </td>
+            <td>@Html.Label("Composure: ")</td>
+            <td>
+                @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+                {
+                    if (stat.StatType == WoDWebBuilder.Models.StatType.Attribute && stat.ID == 9)
+                    {
+                                    if (stat.Value == 1)
+                                    {
+                                        @Html.CheckBox("stat1", true)
+                                        @Html.CheckBox("stat2")
+                                        @Html.CheckBox("stat3")
+                                        @Html.CheckBox("stat4")
+                                        @Html.CheckBox("stat5")
+                                    }
+                                    if (stat.Value == 2)
+                                    {
+                                        @Html.CheckBox("stat1", true)
+                                        @Html.CheckBox("stat2", true)
+                                        @Html.CheckBox("stat3")
+                                        @Html.CheckBox("stat4")
+                                        @Html.CheckBox("stat5")
+                                    }
+                                    if (stat.Value == 3)
+                                    {
+                                        @Html.CheckBox("stat1", true)
+                                        @Html.CheckBox("stat2", true)
+                                        @Html.CheckBox("stat3", true)
+                                        @Html.CheckBox("stat4")
+                                        @Html.CheckBox("stat5")
+                                    }
+                                    if (stat.Value == 4)
+                                    {
+                                        @Html.CheckBox("stat1", true)
+                                        @Html.CheckBox("stat2", true)
+                                        @Html.CheckBox("stat3", true)
+                                        @Html.CheckBox("stat4", true)
+                                        @Html.CheckBox("stat5")
+                                    }
+                                    if (stat.Value == 5)
+                                    {
+                                        @Html.CheckBox("stat1", true)
+                                        @Html.CheckBox("stat2", true)
+                                        @Html.CheckBox("stat3", true)
+                                        @Html.CheckBox("stat4", true)
+                                        @Html.CheckBox("stat5", true)
+                                    }
+                    }
+                }
+            </td>
+        </tr>
+    </table>
+</div>
 
+<h3>Skills</h3>
+<div class="col-md-4">
+    <h4>Mental</h4>
+    @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+    {
+        if (stat.StatType == WoDWebBuilder.Models.StatType.Skill && stat.ID < 18 && stat.ID > 9)
+        {
+            <table>
+                <tr>
+                    <td>@Html.Label(stat.Name)</td>
+                    <td>
+                        @if (stat.Value == 1)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2")
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 2)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 3)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 4)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 5)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5", true)
+                        }
+                    </td>
+                </tr>
+            </table>
+        }
+    }
+    <h4>Physical</h4>
+    @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+    {
+        if (stat.StatType == WoDWebBuilder.Models.StatType.Skill && stat.ID < 26 && stat.ID > 17)
+        {
+            <table>
+                <tr>
+                    <td>@Html.Label(stat.Name)</td>
+                    <td>
+                        @if (stat.Value == 1)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2")
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 2)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 3)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 4)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 5)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5", true)
+                        }
+                    </td>
+                </tr>
+            </table>
+        }
+    }
+    <h4>Social</h4>
+    @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+    {
+        if (stat.StatType == WoDWebBuilder.Models.StatType.Skill && stat.ID < 34 && stat.ID > 25)
+        {
+            <table>
+                <tr>
+                    <td>@Html.Label(stat.Name)</td>
+                    <td>
+                        @if (stat.Value == 1)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2")
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 2)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3")
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 3)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4")
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 4)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5")
+                        }
+                        @if (stat.Value == 5)
+                        {
+                            @Html.CheckBox("stat1", true)
+                            @Html.CheckBox("stat2", true)
+                            @Html.CheckBox("stat3", true)
+                            @Html.CheckBox("stat4", true)
+                            @Html.CheckBox("stat5", true)
+                        }
+                    </td>
+                </tr>
+            </table>
+        }
+    }
+</div>
+<div class="col-md-3">
+    <h3>Merits</h3>
+    @foreach (WoDWebBuilder.Models.Stat stat in Model.Stats)
+    {
+        if (stat.StatType == WoDWebBuilder.Models.StatType.Merit)
+        {
+    <table>
+        <tr>
+            <td>@Html.Label(stat.Name)</td>
+            <td>
+                @if (stat.Value == 1)
+                {
+                    @Html.CheckBox("Merit1", true)
+                    @Html.CheckBox("Merit2")
+                    @Html.CheckBox("Merit3")
+                    @Html.CheckBox("Merit4")
+                    @Html.CheckBox("Merit5")
+                }
+                @if (stat.Value == 2)
+                {
+                    @Html.CheckBox("Merit1", true)
+                    @Html.CheckBox("Merit2", true)
+                    @Html.CheckBox("Merit3")
+                    @Html.CheckBox("Merit4")
+                    @Html.CheckBox("Merit5")
+                }
+                @if (stat.Value == 3)
+                {
+                    @Html.CheckBox("Merit1", true)
+                    @Html.CheckBox("Merit2", true)
+                    @Html.CheckBox("Merit3", true)
+                    @Html.CheckBox("Merit4")
+                    @Html.CheckBox("Merit5")
+                }
+                @if (stat.Value == 4)
+                {
+                    @Html.CheckBox("Merit1", true)
+                    @Html.CheckBox("Merit2", true)
+                    @Html.CheckBox("Merit3", true)
+                    @Html.CheckBox("Merit4", true)
+                    @Html.CheckBox("Merit5")
+                }
+                @if (stat.Value == 5)
+                {
+                    @Html.CheckBox("Merit1", true)
+                    @Html.CheckBox("Merit2", true)
+                    @Html.CheckBox("Merit3", true)
+                    @Html.CheckBox("Merit4", true)
+                    @Html.CheckBox("Merit5", true)
+                }
+            </td>
+        </tr>
+    </table>
+         }
+    }
+</div>
