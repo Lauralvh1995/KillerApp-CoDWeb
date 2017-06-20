@@ -90,7 +90,6 @@ namespace WoDWebBuilder.Models
             {
                 if (stat.Value == req.Value)
                 {
-                    tempCheck--;
                     return tempCheck;
                 }
             }
