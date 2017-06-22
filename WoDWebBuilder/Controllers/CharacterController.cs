@@ -10,11 +10,14 @@ using WoDWebBuilder.Models;
 
 namespace WoDWebBuilder.Controllers
 {
+
     public class CharacterController : Controller
     {
+
         List<Character> characters = new List<Character>();
         private IDatabaseConnector _connector;
         private CharacterRepository _repo;
+
         public CharacterController()
         {
             _connector = new SQLServerConnector();

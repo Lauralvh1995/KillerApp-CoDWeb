@@ -48,7 +48,7 @@ namespace WoDWebBuilder.DAL
             List<Character> characters = new List<Character>();
 
             IDbCommand command = _connector.CreateCommand();
-            command.CommandText = "SELECT * FROM [Character] WHERE [account_ID]=@userid;";
+            command.CommandText = "SELECT  isnull(ID, 0), isnull(account_ID, 0), isnull(name, 0), isnull(concept, 0), isnull(look, 0), isnull(background, 0), isnull(gender, 0), isnull(age, 0), isnull(faction, 0), isnull(virtue, 0), isnull(vice, 0), isnull(aspiration1, 0), isnull(aspiration2, 0), isnull(aspiration3, 0), isnull(condition, 0), isnull(health, 0), isnull(willpower, 0), isnull(integrity, 0), isnull(size, 0), isnull(speed, 0), isnull(defense, 0), isnull(armor, 0), isnull(initiative_mod, 0), isnull(beats, 0), isnull(experience, 0) FROM [Character] WHERE [account_ID]=@userid;";
             command.AddParameterWithValue("userid", userid);
 
             using (IDataReader reader = _connector.ExecuteReader(command))
