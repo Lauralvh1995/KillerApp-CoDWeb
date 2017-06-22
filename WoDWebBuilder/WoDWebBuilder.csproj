@@ -236,6 +236,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\Equipment.cs" />
     <Compile Include="Models\Requirement.cs" />
     <Compile Include="Models\Die.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -349,7 +350,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53979</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:8081/</IISUrl>
+          <IISUrl>http://localhost:8083/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:8083/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

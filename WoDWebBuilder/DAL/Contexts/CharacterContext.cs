@@ -113,7 +113,12 @@ namespace WoDWebBuilder.DAL
 
         public void AddKit(Character character, string kitName)
         {
-            //TODO: Query voor kit toevoegen
+            IDbCommand command = _connector.CreateCommand();
+            command.CommandText = "EXEC AddKit @CharacterID @KitName";
+            command.AddParameterWithValue("CharacterID", character.ID);
+            command.AddParameterWithValue("KitName", kitName);
+
+            _connector.ExecuteNonQuery(command);
         }
 
         public void AddStat(Character character, Stat stat)

@@ -12,6 +12,7 @@ namespace WoDWebBuilder.Models
         public int ID { get; set; }
 
         public List<Stat> Stats { get; set; }
+        public List<Equipment> Equipment { get; set; }
         public int UserID { get; set; }
         
         public string Name { get; set; }
@@ -42,6 +43,7 @@ namespace WoDWebBuilder.Models
         public Character()
         {
             Stats = new List<Stat>();
+            Equipment = new List<Equipment>();
             UserID = 1;
         }
 

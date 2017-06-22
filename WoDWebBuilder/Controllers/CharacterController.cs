@@ -21,7 +21,6 @@ namespace WoDWebBuilder.Controllers
             _repo = new CharacterRepository(_connector);
         }
 
-
         // GET: Character
         public ActionResult Index()
         {

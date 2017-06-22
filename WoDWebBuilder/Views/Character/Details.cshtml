@@ -742,3 +742,51 @@
          }
     }
 </div>
+<div class="row">
+    <h3>Equipment</h3>
+    <table>
+        <tr>
+            <td>
+                <h4>Name</h4>
+            </td>
+            <td>
+                <h4>Effect</h4>
+            </td>
+            <td>
+                <h4>Condition</h4>
+            </td>
+            <td>
+                <h4>Dice Bonus</h4>
+            </td>
+            <td>
+                <h4>Durability</h4>
+            </td>
+            <td>
+                <h4>Size</h4>
+            </td>
+        </tr>
+    @foreach(WoDWebBuilder.Models.Equipment equip in Model.Equipment)
+    {
+        <tr>
+            <td>
+                @equip.Name;
+            </td>
+            <td>
+                @equip.Effect;
+            </td>
+            <td>
+                @equip.Condition;
+            </td>
+            <td>
+                @equip.DiceBonus;
+            </td>
+            <td>
+                @equip.Durability;
+            </td>
+            <td>
+                @equip.Size;
+            </td>
+        </tr>
+    }
+    </table>
+</div>
