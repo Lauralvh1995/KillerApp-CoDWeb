@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using WoDWebBuilder.Models;
 
@@ -93,6 +94,7 @@ namespace WoDWebBuilder.DAL
                 {
                     character.Stats.Add(GetStat(character, i));
                 }
+                character.Equipment = GetEquipment(character);
             }
             return characters;
         }
@@ -114,9 +116,10 @@ namespace WoDWebBuilder.DAL
         public void AddKit(Character character, string kitName)
         {
             IDbCommand command = _connector.CreateCommand();
-            command.CommandText = "EXEC AddKit @CharacterID @KitName";
-            command.AddParameterWithValue("CharacterID", character.ID);
+            command.CommandText = "AddKit";
             command.AddParameterWithValue("KitName", kitName);
+            command.AddParameterWithValue("CharID", character.ID);
+            command.CommandType = CommandType.StoredProcedure;
 
             _connector.ExecuteNonQuery(command);
         }
@@ -197,6 +200,33 @@ namespace WoDWebBuilder.DAL
                 }
             }
             return requirements;
+        }
+        public List<Equipment> GetEquipment(Character character)
+        {
+            List<Equipment> equipment = new List<Equipment>();
+
+            IDbCommand command = _connector.CreateCommand();
+            command.CommandText = "SELECT * FROM [Inventory] JOIN [Equipment] ON Inventory.eq_ID = Equipment.ID WHERE [char_ID]=@characterid;";
+            command.AddParameterWithValue("characterid", character.ID);
+
+            using (IDataReader reader = _connector.ExecuteReader(command))
+            {
+                while (reader.Read())
+                {
+                    Equipment item = new Equipment()
+                    {
+                        Name = reader.GetString(3),
+                        EquipmentType = reader.GetString(4),
+                        Size = reader.GetInt32(5),
+                        Durability = reader.GetInt32(6),
+                        DiceBonus = reader.GetInt32(8),
+                        Effect = reader.GetString(9),
+                        Condition = reader.GetString(10)
+                    };
+                    equipment.Add(item);
+                }
+            }
+            return equipment;
         }
     }
 }

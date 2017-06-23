@@ -5,14 +5,17 @@
 }
 <div class="container">
     <h2>Characters</h2>
+    <table>
         @foreach (Character charrie in Model)
         {
-            <a href="~/Character/Details/@charrie.ID">
-                <div class="col-md-3">@charrie.Name </div>
-                <div class="col-md-3">@charrie.Concept</div>
-            </a>
-            <a href="~/Character/Edit/@charrie.ID">(edit)</a>
+            <tr>
+                
+                    <td><a href="~/Character/Details/@charrie.ID">@charrie.Name</a></td>
+                    <td><a href="~/Character/Details/@charrie.ID">@charrie.Concept</a></td>
+                    <td><a href="~/Character/Edit/@charrie.ID">(Delete)</a></td>
+            </tr>
         }
+    </table>
 </div>
 <form action="~/Character/Create">
     <input type="submit" value="New Character" />

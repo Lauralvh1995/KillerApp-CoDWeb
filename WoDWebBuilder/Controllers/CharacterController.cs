@@ -34,7 +34,16 @@ namespace WoDWebBuilder.Controllers
         // GET: Character/Details/5
         public ActionResult Details(int id)
         {
-            return View(_repo.GetCharacterByID(id));
+            try
+            {
+                return View(_repo.GetCharacterByID(id));
+            }
+            catch (Exception e)
+            {
+                Debug.Print(e.ToString());
+            }
+            Index();
+            return View("Index", characters);
         }
 
         // GET: Character/Create
@@ -61,6 +70,7 @@ namespace WoDWebBuilder.Controllers
             {
                 Debug.Print(ex.ToString());
                 CheckCharacters();
+
                 return View("Index", characters);
             }
         }
@@ -73,18 +83,38 @@ namespace WoDWebBuilder.Controllers
 
         // POST: Character/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Character model)
         {
             try
             {
-                _repo.GetCharacterByID(id).Age = Convert.ToInt32(collection["Age"]);
-                _repo.GetCharacterByID(id).Background = collection["Background"];
-                _repo.Update(_repo.GetCharacterByID(id));
-                return RedirectToAction("Index");
+                _repo.Delete(model);
+                return View("Index", characters);
             }
             catch
             {
-                return View();
+                return View("Index", characters);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Details(Character model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _repo.AddKit(model);
+                    model.UserID = 1;
+                }
+                CheckCharacters();
+                return View("Index", characters);
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.ToString());
+                CheckCharacters();
+
+                return View("Index", characters);
             }
         }
 

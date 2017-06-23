@@ -742,27 +742,27 @@
          }
     }
 </div>
-<div class="row">
+<div class="col-md-3">
     <h3>Equipment</h3>
-    <table>
+    <table cellspacing="2">
         <tr>
             <td>
                 <h4>Name</h4>
             </td>
             <td>
-                <h4>Effect</h4>
+                <h4>Effect </h4>
             </td>
             <td>
-                <h4>Condition</h4>
+                <h4>Condition </h4>
             </td>
             <td>
-                <h4>Dice Bonus</h4>
+                <h4>Dice Bonus </h4>
             </td>
             <td>
-                <h4>Durability</h4>
+                <h4>Durability </h4>
             </td>
             <td>
-                <h4>Size</h4>
+                <h4>Size </h4>
             </td>
         </tr>
     @foreach(WoDWebBuilder.Models.Equipment equip in Model.Equipment)
@@ -789,4 +789,8 @@
         </tr>
     }
     </table>
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Add Vampire Kit" />
+    }
 </div>

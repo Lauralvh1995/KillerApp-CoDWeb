@@ -21,6 +21,7 @@ namespace WoDWebBuilder.DAL
         {
             return Characters;
         }
+
         public Character GetCharacterByID(int characterID)
         {
             foreach (Character character in Characters)
@@ -30,16 +31,21 @@ namespace WoDWebBuilder.DAL
                     return character;
                 }
             }
-            return null;
+            throw new Exception("No character found.");
         }
         public void Add(Character character)
         {
             _context.Add(character.UserID, character);
             Characters.Add(character);
         }
+
+        public void AddKit(Character character)
+        {
+            _context.AddKit(character, "Vampire Hunting");
+        }
         public void Refresh()
         {
-
+            _context.Read(1);
         }
         public void Update(Character character)
         {
