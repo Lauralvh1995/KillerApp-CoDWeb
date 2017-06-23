@@ -87,11 +87,18 @@ namespace WoDWebBuilder.Controllers
         {
             try
             {
-                _repo.Delete(model);
+                if (ModelState.IsValid)
+                {
+                    _repo.Delete(model);
+                }
+                CheckCharacters();
                 return View("Index", characters);
             }
-            catch
+            catch (Exception ex)
             {
+                Debug.Print(ex.ToString());
+                CheckCharacters();
+
                 return View("Index", characters);
             }
         }

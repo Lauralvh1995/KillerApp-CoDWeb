@@ -49,11 +49,12 @@ namespace WoDWebBuilder.DAL
         }
         public void Update(Character character)
         {
-
+            _context.Update(character);
         }
         public void Delete(Character character)
         {
-
+            _context.Delete(character);
+            Characters.Remove(character);
         }
     }
 }
